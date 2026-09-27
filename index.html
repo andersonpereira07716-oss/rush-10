@@ -5,82 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEXA v3.0 Omni - Command Center</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="omni-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <h2>NEXA v3.0</h2>
-            <ul>
-                <li class="active" onclick="switchTab('dashboard')">📊 Dashboard</li>
-                <li onclick="switchTab('chat')">🤖 IA Gemini</li>
-                <li onclick="switchTab('webhooks')">⚡ Webhooks</li>
-                <li onclick="switchTab('kanban')">📋 Tarefas</li>
-                <li onclick="switchTab('utils')">🛠️ Utilitários</li>
-            </ul>
-        </aside>
+        <!-- Header / Título -->
+        <header class="omni-header">
+            <h2>NEXA v3.0 OMNI</h2>
+            <span class="badge-online">🟢 ONLINE</span>
+        </header>
 
-        <!-- Main Content -->
-        <main class="content">
-            <!-- DASHBOARD -->
-            <section id="tab-dashboard" class="tab-pane active">
-                <h1>Visão Geral Omni</h1>
-                <div class="cards-grid">
-                    <div class="card"><h3>Status do Sistema</h3><p class="status-online">🟢 Operacional</p></div>
-                    <div class="card"><h3>Automações Ativas</h3><p>Make.com / PM2</p></div>
-                    <div class="card"><h3>Segurança</h3><p>Supabase RLS Ativo</p></div>
+        <!-- Seção 1: Status Geral -->
+        <section class="omni-section">
+            <h3>📊 Visão Geral do Sistema</h3>
+            <div class="cards-grid">
+                <div class="card"><span>Status:</span> <b>Operacional</b></div>
+                <div class="card"><span>Automações:</span> <b>Make / PM2</b></div>
+                <div class="card"><span>Segurança:</span> <b>Supabase RLS</b></div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Chat IA Gemini -->
+        <section class="omni-section">
+            <h3>🤖 Terminal IA (Gemini API)</h3>
+            <div class="chat-box" id="chat-messages">
+                <div class="message ai">NEXA Omni pronto. Como posso ajudar nas tuas operações hoje?</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="user-input" placeholder="Digite seu comando...">
+                <button onclick="sendChatMessage()">Enviar</button>
+            </div>
+        </section>
+
+        <!-- Seção 3: Webhooks & Automações -->
+        <section class="omni-section">
+            <h3>⚡ Gestão de Webhooks</h3>
+            <button onclick="triggerWebhook()" style="width:100%; margin-bottom:8px;">Testar Webhook Manual</button>
+            <pre id="webhook-log">Aguardando eventos...</pre>
+        </section>
+
+        <!-- Seção 4: Tarefas Táticas (Kanban Compacto) -->
+        <section class="omni-section">
+            <h3>📋 Tarefas Táticas</h3>
+            <div class="kanban-row">
+                <div class="kanban-box">
+                    <h4>A Fazer</h4>
+                    <ul><li>Configurar Supabase</li></ul>
                 </div>
-            </section>
-
-            <!-- CHAT IA -->
-            <section id="tab-chat" class="tab-pane">
-                <h1>Terminal IA (Gemini API)</h1>
-                <div class="chat-box" id="chat-messages">
-                    <div class="message ai">NEXA Omni pronto. Como posso ajudar nas tuas operações hoje?</div>
+                <div class="kanban-box">
+                    <h4>Em Progresso</h4>
+                    <ul><li>Deploy Vercel</li></ul>
                 </div>
-                <div class="chat-input-area">
-                    <input type="text" id="user-input" placeholder="Digite seu comando para a IA...">
-                    <button onclick="sendChatMessage()">Enviar</button>
+                <div class="kanban-box">
+                    <h4>Concluído</h4>
+                    <ul><li>Painel Único Omni</li></ul>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- WEBHOOKS -->
-            <section id="tab-webhooks" class="tab-pane">
-                <h1>Gestão de Webhooks & Automações</h1>
-                <p>Monitorização de disparos e integrações (Make.com / Cakto / Mercado Pago).</p>
-                <button onclick="triggerWebhook()">Testar Webhook Manual</button>
-                <pre id="webhook-log">Aguardando eventos...</pre>
-            </section>
-
-            <!-- KANBAN -->
-            <section id="tab-kanban" class="tab-pane">
-                <h1>Gestão de Tarefas Táticas</h1>
-                <div class="kanban-grid">
-                    <div class="kanban-col">
-                        <h3>A Fazer</h3>
-                        <ul id="list-todo"><li>Configurar Supabase</li></ul>
-                    </div>
-                    <div class="kanban-col">
-                        <h3>Em Progreso</h3>
-                        <ul id="list-doing"><li>Deploy no Vercel</li></ul>
-                    </div>
-                    <div class="kanban-col">
-                        <h3>Concluído</h3>
-                        <ul id="list-done"><li>Estrutura Base Omni</li></ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- UTILITÁRIOS -->
-            <section id="tab-utils" class="tab-pane">
-                <h1>Ferramentas de Utilidade</h1>
-                <button onclick="runSystemCheck()">Executar Diagnóstico de Termux</button>
-                <div id="util-output" class="terminal-output">Pronto para diagnóstico.</div>
-            </section>
-        </main>
+        <!-- Seção 5: Utilitários -->
+        <section class="omni-section">
+            <h3>🛠️ Utilitários de Sistema</h3>
+            <button onclick="runSystemCheck()" style="width:100%; margin-bottom:8px;">Executar Diagnóstico</button>
+            <div id="util-output" class="terminal-output">Pronto para diagnóstico.</div>
+        </section>
     </div>
     <script src="app.js"></script>
-    <script src="js/app.js"></script>
 </body>
 </html>
