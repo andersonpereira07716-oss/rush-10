@@ -24,15 +24,18 @@
             </div>
         </section>
 
-        <!-- Seção 2: Chat IA Gemini -->
+        <!-- Seção 2: Chat IA Gemini (Real) -->
         <section class="omni-section">
-            <h3>🤖 Terminal IA (Gemini API)</h3>
+            <h3>🤖 Terminal IA (Gemini API Real)</h3>
+            <div style="margin-bottom: 8px;">
+                <input type="password" id="gemini-key" placeholder="Insere tua Gemini API Key..." style="width:100%; background:#030712; border:1px solid #1f2937; color:#fff; padding:6px; border-radius:4px; font-size:0.75rem;">
+            </div>
             <div class="chat-box" id="chat-messages">
-                <div class="message ai">NEXA Omni pronto. Como posso ajudar nas tuas operações hoje?</div>
+                <div class="message ai">NEXA Omni pronto. Insere a tua chave e envia um comando para falar com a Gemini.</div>
             </div>
             <div class="chat-input-area">
-                <input type="text" id="user-input" placeholder="Digite seu comando...">
-                <button onclick="sendChatMessage()">Enviar</button>
+                <input type="text" id="user-input" placeholder="Digite seu comando para a IA...">
+                <button onclick="sendGeminiMessage()">Enviar</button>
             </div>
         </section>
 
@@ -53,7 +56,7 @@
                 </div>
                 <div class="kanban-box">
                     <h4>Em Progresso</h4>
-                    <ul><li>Deploy Vercel</li></ul>
+                    <ul><li>API Gemini Real</li></ul>
                 </div>
                 <div class="kanban-box">
                     <h4>Concluído</h4>
