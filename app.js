@@ -1,4 +1,3 @@
-// Carregar chave salva ao iniciar a página
 window.addEventListener('DOMContentLoaded', () => {
     const savedKey = localStorage.getItem('nexa_gemini_key');
     if (savedKey) {
@@ -20,7 +19,7 @@ async function sendGeminiMessage() {
     const input = document.getElementById('user-input');
     const apiKey = document.getElementById('gemini-key').value.trim();
     const chatBox = document.getElementById('chat-messages');
-    
+
     if(!input.value.trim()) return;
     if(!apiKey) {
         alert('Por favor, insere e salva a tua chave da API Gemini primeiro!');
@@ -30,11 +29,9 @@ async function sendGeminiMessage() {
     const userText = input.value;
     input.value = '';
 
-    // Adicionar mensagem do utilizador ao chat
     chatBox.innerHTML += `<div class="message" style="margin-left:auto; background:#00ffcc; color:#030712; margin-bottom:6px; padding:6px 8px; border-radius:4px; max-width:85%;">${userText}</div>`;
     chatBox.scrollTop = chatBox.scrollHeight;
 
-    // Indicador de carregamento
     const loadingId = 'loading-' + Date.now();
     chatBox.innerHTML += `<div id="${loadingId}" class="message ai">A processar com a Gemini...</div>`;
     chatBox.scrollTop = chatBox.scrollHeight;
