@@ -27,11 +27,12 @@
         <!-- Seção 2: Chat IA Gemini (Real) -->
         <section class="omni-section">
             <h3>🤖 Terminal IA (Gemini API Real)</h3>
-            <div style="margin-bottom: 8px;">
-                <input type="password" id="gemini-key" placeholder="Insere tua Gemini API Key..." style="width:100%; background:#030712; border:1px solid #1f2937; color:#fff; padding:6px; border-radius:4px; font-size:0.75rem;">
+            <div style="margin-bottom: 8px; display: flex; gap: 6px;">
+                <input type="password" id="gemini-key" placeholder="Insere tua Gemini API Key..." style="flex:1; background:#030712; border:1px solid #1f2937; color:#fff; padding:6px; border-radius:4px; font-size:0.75rem;">
+                <button onclick="saveApiKey()" style="padding: 0 10px; font-size: 0.75rem;">Salvar</button>
             </div>
             <div class="chat-box" id="chat-messages">
-                <div class="message ai">NEXA Omni pronto. Insere a tua chave e envia um comando para falar com a Gemini.</div>
+                <div class="message ai">NEXA Omni pronto. Insere a tua chave, clica em Salvar e envia um comando para falar com a Gemini.</div>
             </div>
             <div class="chat-input-area">
                 <input type="text" id="user-input" placeholder="Digite seu comando para a IA...">

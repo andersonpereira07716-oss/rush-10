@@ -1,3 +1,21 @@
+// Carregar chave salva ao iniciar a página
+window.addEventListener('DOMContentLoaded', () => {
+    const savedKey = localStorage.getItem('nexa_gemini_key');
+    if (savedKey) {
+        document.getElementById('gemini-key').value = savedKey;
+    }
+});
+
+function saveApiKey() {
+    const apiKey = document.getElementById('gemini-key').value.trim();
+    if (!apiKey) {
+        alert('Insere uma chave válida antes de salvar!');
+        return;
+    }
+    localStorage.setItem('nexa_gemini_key', apiKey);
+    alert('Chave da Gemini salva com sucesso no dispositivo!');
+}
+
 async function sendGeminiMessage() {
     const input = document.getElementById('user-input');
     const apiKey = document.getElementById('gemini-key').value.trim();
@@ -5,7 +23,7 @@ async function sendGeminiMessage() {
     
     if(!input.value.trim()) return;
     if(!apiKey) {
-        alert('Por favor, insere a tua chave da API Gemini primeiro!');
+        alert('Por favor, insere e salva a tua chave da API Gemini primeiro!');
         return;
     }
 
