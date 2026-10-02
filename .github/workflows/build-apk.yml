@@ -25,11 +25,17 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Build Web Assets and Capacitor
+      - name: Configure Capacitor and Sync
         run: |
           mkdir -p www
           cp index.html style.css app.js www/
-          npx cap init "Rush 10" "com.anderson.rush10" --web-dir "www" --yes
+          cat << 'EOT' > capacitor.config.json
+          {
+            "appId": "com.anderson.rush10",
+            "appName": "Rush 10",
+            "webDir": "www"
+          }
+          EOT
           npx cap add android
           npx cap sync android
 
