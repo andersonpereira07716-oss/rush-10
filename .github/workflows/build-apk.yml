@@ -36,7 +36,7 @@ jobs:
             "webDir": "www"
           }
           EOT
-          npx cap add android
+          if [ ! -d "android" ]; then npx cap add android; fi
           npx cap sync android
 
       - name: Build Android APK
