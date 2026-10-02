@@ -25,10 +25,12 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Build Web Assets and Sync
+      - name: Build Web Assets and Capacitor
         run: |
           mkdir -p www
           cp index.html style.css app.js www/
+          npx cap init "Rush 10" "com.anderson.rush10" --web-dir "www" --yes
+          npx cap add android
           npx cap sync android
 
       - name: Build Android APK
