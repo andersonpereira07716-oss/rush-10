@@ -1,0 +1,334 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0f19;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#game-container {
+    width: 100%;
+    max-width: 420px;
+    height: 100%;
+    max-height: 840px;
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* TELA INICIAL */
+.logo-area {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-area h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #f3f4f6;
+}
+
+.logo-area h1 span {
+    color: #ef4444;
+}
+
+.logo-area p {
+    color: #9ca3af;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.menu-buttons {
+    width: 100%;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn.primary {
+    background-color: #ef4444;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
+}
+
+.btn.secondary {
+    background-color: #374151;
+    color: #ffffff;
+}
+
+/* HUD DE JOGO */
+.hud {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    z-index: 10;
+    pointer-events: none;
+}
+
+#game-area {
+    width: 100%;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    touch-action: none;
+}
+
+/* PLAYER E SKINS */
+#player {
+    position: absolute;
+    bottom: 40px;
+    left: calc(50% - 25px);
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    transition: box-shadow 0.2s;
+}
+
+#player.shielded {
+    box-shadow: 0 0 20px #38bdf8, inset 0 0 10px #38bdf8 !important;
+    border: 2px solid #38bdf8;
+}
+
+#player.skin-default {
+    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.5);
+}
+
+#player.skin-neon {
+    background: linear-gradient(135deg, #06b6d4 0%, #0369a1 100%);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.6);
+}
+
+#player.skin-gold {
+    background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%);
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.7);
+}
+
+/* OBSTÁCULOS, MOEDAS E ESCUDOS */
+.obstacle {
+    position: absolute;
+    top: -50px;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+}
+
+.coin {
+    position: absolute;
+    top: -40px;
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+}
+
+.shield-power {
+    position: absolute;
+    top: -40px;
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+/* TELA DE GAME OVER */
+#gameover-screen {
+    background: rgba(11, 15, 25, 0.92);
+    z-index: 20;
+}
+
+.gameover-card {
+    background: #1f2937;
+    padding: 30px 20px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border: 1px solid #374151;
+}
+
+.gameover-card h2 {
+    font-size: 2rem;
+    color: #ef4444;
+    margin-bottom: 20px;
+}
+
+.stats-box {
+    background: #111827;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 1.1rem;
+}
+
+.stats-box span {
+    font-weight: bold;
+    color: #f3f4f6;
+    float: right;
+}
+
+/* TELA DA LOJA E MISSÕES */
+#shop-screen, #missions-screen {
+    background: #111827;
+    z-index: 30;
+    justify-content: flex-start;
+    padding-top: 40px;
+}
+
+.shop-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+.shop-header h2 {
+    font-size: 1.8rem;
+    color: #f3f4f6;
+}
+
+.shop-header span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fbbf24;
+}
+
+.skins-list, .missions-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.skin-item, .mission-item {
+    background: #1f2937;
+    padding: 12px 15px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #374151;
+}
+
+.skin-preview {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.skin-preview.red { background: linear-gradient(135deg, #ef4444, #b91c1c); }
+.skin-preview.blue { background: linear-gradient(135deg, #06b6d4, #0369a1); }
+.skin-preview.gold { background: linear-gradient(135deg, #fbbf24, #b45309); }
+
+.skin-info, .mission-info {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.skin-info h3, .mission-info h3 {
+    font-size: 1.05rem;
+    color: #f3f4f6;
+}
+
+.skin-info p, .mission-info p {
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+.btn-buy {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #3b82f6;
+    color: #fff;
+}
+
+.btn-buy.select { background-color: #10b981; }
+.btn-buy.owned { background-color: #374151; color: #9ca3af; }
+
+.mission-badge {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background-color: #374151;
+    color: #9ca3af;
+}
+
+.mission-badge.completed {
+    background-color: #10b981;
+    color: #fff;
+}

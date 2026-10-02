@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RUSH 10</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- TELA INICIAL -->
+        <div id="start-screen" class="screen active">
+            <div class="logo-area">
+                <h1>RUSH <span>10</span></h1>
+                <p>Sobreviva o máximo que puder!</p>
+            </div>
+            <div class="menu-buttons">
+                <button id="btn-play" class="btn primary">JOGAR</button>
+                <button id="btn-shop" class="btn secondary">LOJA</button>
+                <button id="btn-missions" class="btn secondary">MISSÕES</button>
+                <button id="btn-sound" class="btn secondary">SOM: LIGADO</button>
+            </div>
+        </div>
+
+        <!-- TELA DE MISSÕES -->
+        <div id="missions-screen" class="screen">
+            <div class="shop-header">
+                <h2>MISSÕES</h2>
+            </div>
+            <div class="missions-list">
+                <div class="mission-item">
+                    <div class="mission-info">
+                        <h3>Primeiro Passo</h3>
+                        <p>Alcançar 30 pontos numa partida</p>
+                    </div>
+                    <span id="m1-status" class="mission-badge">PENDENTE</span>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-info">
+                        <h3>Caçador de Ouro</h3>
+                        <p>Recolher 10 moedas totais</p>
+                    </div>
+                    <span id="m2-status" class="mission-badge">PENDENTE</span>
+                </div>
+            </div>
+            <button id="btn-back-missions" class="btn secondary" style="margin-top: 20px;">VOLTAR</button>
+        </div>
+
+        <!-- TELA DA LOJA -->
+        <div id="shop-screen" class="screen">
+            <div class="shop-header">
+                <h2>LOJA DE SKINS</h2>
+                <span id="shop-coins">🪙 0</span>
+            </div>
+            <div class="skins-list">
+                <div class="skin-item" data-skin="default" data-price="0">
+                    <div class="skin-preview red"></div>
+                    <div class="skin-info">
+                        <h3>Padrão</h3>
+                        <p>Grátis</p>
+                    </div>
+                    <button class="btn-buy select">USAR</button>
+                </div>
+                <div class="skin-item" data-skin="neon" data-price="10">
+                    <div class="skin-preview blue"></div>
+                    <div class="skin-info">
+                        <h3>Azul Neon</h3>
+                        <p>🪙 10 moedas</p>
+                    </div>
+                    <button class="btn-buy">COMPRAR</button>
+                </div>
+                <div class="skin-item" data-skin="gold" data-price="25">
+                    <div class="skin-preview gold"></div>
+                    <div class="skin-info">
+                        <h3>Ouro Ciber</h3>
+                        <p>🪙 25 moedas</p>
+                    </div>
+                    <button class="btn-buy">COMPRAR</button>
+                </div>
+            </div>
+            <button id="btn-back-shop" class="btn secondary" style="margin-top: 20px;">VOLTAR</button>
+        </div>
+
+        <!-- TELA DE GAMEPLAY -->
+        <div id="game-screen" class="screen">
+            <div class="hud">
+                <span id="score-display">Pontos: 0</span>
+                <span id="shield-display" style="color: #38bdf8; display: none;">🛡️ ESCUDO</span>
+                <span id="coins-display">🪙 0</span>
+            </div>
+            <div id="game-area">
+                <div id="player" class="skin-default"></div>
+            </div>
+        </div>
+
+        <!-- TELA DE GAME OVER -->
+        <div id="gameover-screen" class="screen">
+            <div class="gameover-card">
+                <h2>FIM DE JOGO</h2>
+                <div class="stats-box">
+                    <p>Pontuação: <span id="final-score">0</span></p>
+                    <p>Recorde: <span id="best-score">0</span></p>
+                    <p>Moedas: <span id="final-coins">0</span></p>
+                </div>
+                <div class="menu-buttons">
+                    <button id="btn-restart" class="btn primary">TENTAR NOVAMENTE</button>
+                    <button id="btn-menu" class="btn secondary">MENU PRINCIPAL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
