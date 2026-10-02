@@ -1,0 +1,157 @@
+PROMPT MESTRE:
+Futuristic mobile game UI, dark navy blue background, red neon highlights, premium gaming interface, glowing effects, ultra detailed, professional mobile game art, modern arcade style, 4k quality.
+
+[logo_rush10.png]
+Create a professional gaming logo for a mobile game titled RUSH 10.
+The word RUSH in metallic white and silver.
+The number 10 in bright red neon with glowing effects.
+Speed trails behind the text.
+Transparent background.
+Ultra detailed.
+
+[app_icon.png]
+Create a premium mobile game app icon.
+Dark blue futuristic background.
+Large R10 symbol in the center.
+White metallic R.
+Red glowing 10.
+Glossy finish.
+512x512.
+
+[bg_splash.png]
+Create a mobile game splash screen.
+1080x1920 vertical.
+Red neon light streaks.
+Energy particles.
+Rush 10 logo in center.
+No buttons.
+
+[bg_menu.png]
+Create a futuristic game menu background.
+1080x1920 portrait.
+Dark navy gradient.
+Red neon diagonal lines.
+Particles.
+No text.
+
+[btn_jogar.png]
+Create a futuristic mobile game button.
+Red neon glow.
+Text JOGAR.
+Play icon.
+Transparent background.
+
+[btn_loja.png]
+Create a futuristic mobile game button.
+Dark blue metallic.
+Shopping cart icon.
+Text LOJA.
+Transparent background.
+
+[btn_ranking.png]
+Create a futuristic ranking button.
+Golden trophy icon.
+Text RANKING.
+Transparent background.
+
+[btn_config.png]
+Create a futuristic settings button.
+Gear icon.
+Dark metallic blue.
+Transparent background.
+
+[btn_sound_on.png]
+Create a sound enabled button.
+Red neon glow.
+Speaker icon.
+Transparent background.
+
+[btn_sound_off.png]
+Create a sound disabled button.
+Speaker with red X.
+Transparent background.
+
+[icon_home.png]
+Create a futuristic home icon.
+Red neon style.
+Transparent background.
+
+[icon_play.png]
+Create a futuristic play icon.
+Gaming UI style.
+Transparent background.
+
+[icon_loja.png]
+Create a shopping cart icon.
+White metallic.
+Red glow.
+Transparent background.
+
+[icon_config.png]
+Create a metallic gear icon.
+Red neon edges.
+Transparent background.
+
+[icon_sound_on.png]
+Create a speaker icon with sound waves.
+Gaming UI.
+Transparent background.
+
+[icon_sound_off.png]
+Create a muted speaker icon.
+Gaming UI.
+Transparent background.
+
+[icon_moeda.png]
+Create a premium game coin.
+Golden coin.
+Crown engraved.
+Highly detailed.
+Transparent background.
+
+[icon_gema.png]
+Create a premium game gem.
+Bright red ruby crystal.
+Fantasy style.
+Transparent background.
+
+[icon_trofeu.png]
+Create a luxury gold trophy icon.
+Red reflections.
+Transparent background.
+
+[icon_vida.png]
+Create a glowing red heart icon.
+Game health symbol.
+Transparent background.
+
+[icon_velocidade.png]
+Create a speed boost icon.
+Energy lines.
+Red neon.
+Transparent background.
+
+[icon_escudo.png]
+Create a futuristic shield icon.
+Blue metallic.
+Energy effect.
+Transparent background.
+
+[banner_loja.png]
+Create a mobile game store banner.
+Dark blue and red neon theme.
+Premium gaming style.
+
+[feature_graphic.png]
+Create a Google Play feature graphic for Rush 10.
+Landscape.
+Rush 10 logo.
+Action atmosphere.
+Red neon and dark blue colors.
+
+[capsule_banner.png]
+Create a promotional banner for Rush 10.
+1920x1080.
+Speed effects.
+Professional marketing artwork.
+
